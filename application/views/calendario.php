@@ -221,19 +221,19 @@
 			<div class="modal-content">
 			
 				<!-- Modal Header -->
-				<div class="modal-header">
-				<h4 class="modal-title">¡Importante!</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="modal-header" style="background-color:yellow;">
+					<h4 class="modal-title">¡Importante!</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				
 				<!-- Modal body -->
-				<div class="modal-body">
+				<div class="modal-body" style="background-color: white;">
 					<p>Verifica que fecha y horario esten disponibles antes de realizar el apartado.<p>
 				</div>
 				
 				<!-- Modal footer -->
-				<div class="modal-footer">
-				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Aceptar</button>
+				<div class="modal-footer" style="background-color: white;">
+				<button type="button" class="btn btn-outline-warning" data-dismiss="modal">Aceptar</button>
 				</div>
 				
 			</div>
