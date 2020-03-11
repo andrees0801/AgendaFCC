@@ -99,10 +99,10 @@
 				<div id="accordion" class="accordion-wrapper">
 					<div class="container-fluid" style="background-color: white;">
 						<div class="row">	
-							<div class="col-6">
+							<div class="col-12 col-lg-6 mb-1">
 								<button type="button" class="btn btn-outline-info btn-block" data-toggle="collapse" href="#mural">Calendario Mural</button>
 							</div>
-							<div class="col-6">
+							<div class="col-12 col-lg-6">
 								<button type="button" class="btn btn-outline-dark btn-block" data-toggle="collapse" href="#auditorio">Calendario Auditorio Albert Einstein</button>
 							</div>
 						</div>
