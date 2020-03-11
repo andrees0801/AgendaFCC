@@ -6,71 +6,157 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Calendar</h3>
-                </div>
-                <div class="col-md-7 align-self-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item">Apps</li>
-                        <li class="breadcrumb-item active">Calendar</li>
-                    </ol>
-                </div>
-                
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            
+
+				<div class="container mb-3 p-4" style="background-color: white;">
+					<div class="row mb-2">
+						<div class="col-lg-5">
+							<button onclick="mostrar_aviso()" class="btn btn-info btn-block" data-toggle="collapse" href="#reservasion-div">Reservar espacio</button>
+						</div>
+					</div>
+					<form id="reservasion-div" class="collapse">
+						
+						<div class="row mb-2">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="nombre" class="mr-sm-2">Nombre(s):</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nombre(s)" name="nombre">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="apellido" class="mr-sm-2">Apellidos:</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Apellidos" name="apellido">
+								</div>
+							</div>
+							<div class="col-6">
+								<label for="email">Correo:</label>
+    							<input type="email" class="form-control" placeholder="Correo" id="correo">
+							</div>
+							<div class="col-6">
+								<div class="form-group">
+									<label for="sel1">Seleccione el espacio:</label>
+									<select class="form-control" id="sel1">
+										<option>Auditorio Albert Einstein</option>
+										<option>Mural</option>
+									</select>
+								</div> 
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<div class="col-12 text-center">
+								<h4>Horario</h4>
+							</div>
+							<div class="col-6 col-lg-2">
+								<button type="button" class="btn btn-outline-success btn-block" onclick="agregar_horario()">
+									<i class="mdi mdi-calendar-multiple"></i>
+									<span>Agregar</span>
+								</button>
+							</div>
+							<div class="col-6 col-lg-2">
+								<button type="button" class="btn btn-outline-danger btn-block" onclick="eliminar_horario()">
+									<i class="mdi mdi-calendar-remove"></i>
+									<span>Eliminar</span>
+								</button>
+							</div>
+						</div>
+						
+						<div class="container-fluid" id="horarios">
+							<div class="row">
+								<div class="col-3">
+									<div class="form-group">
+										<label for="dia_1" class="mr-sm-2">Dia</label>
+										<input type="date" class="form-control mb-2 mr-sm-2" name="dia_1">
+									</div>
+								</div>
+								<div class="col-3">
+									<div class="form-group">
+										<label for="dia_1" class="mr-sm-2">Hora de inicio</label>
+										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-1">
+									</div>
+								</div>
+								<div class="col-3">
+									<div class="form-group">
+										<label for="dia_1" class="mr-sm-2">Hora de finalización</label>
+										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-1">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-5">
+								<button type="submit" class="btn btn-success btn-block">Reservar</button>
+							</div>
+						</div>
+
+					</form> 
+				</div>
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
+
+				<div id="accordion" class="accordion-wrapper">
+					<div class="container-fluid" style="background-color: white;">
+						<div class="row">	
+							<div class="col-6">
+								<button type="button" class="btn btn-outline-info btn-block" data-toggle="collapse" href="#mural">Calendario Mural</button>
+							</div>
+							<div class="col-6">
+								<button type="button" class="btn btn-outline-dark btn-block" data-toggle="collapse" href="#auditorio">Calendario Auditorio Albert Einstein</button>
+							</div>
+						</div>
+						<div class="row collapse show mt-2" id="mural" data-parent="#accordion">
+							<div class="col-12 text-center mt-4">
+								<p>Horarios Mural</p>
+							</div>
+							<div class="col-md-12">
+								<div class="card">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="card-body b-l calender-sidebar">
+													<div id="calendar"></div>
+												</div>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="row collapse mt-2" id="auditorio" data-parent="#accordion">
+							<div class="col-12 text-center mt-4">
+								<p>Horarios Auditorio Albert Einstein</p>
+							</div>
+							<div class="col-md-12">
+								<div class="card">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="card-body b-l calender-sidebar">
+													<p>Otro calendario</p>
+												</div>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <div class="card-body">
-                                            <h4 class="card-title m-t-10">Drag & Drop Event</h4>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div id="calendar-events" class="">
-                                                        <div class="calendar-events" data-class="bg-info"><i class="fa fa-circle text-info"></i> My Event One</div>
-                                                        <div class="calendar-events" data-class="bg-success"><i class="fa fa-circle text-success"></i> My Event Two</div>
-                                                        <div class="calendar-events" data-class="bg-danger"><i class="fa fa-circle text-danger"></i> My Event Three</div>
-                                                        <div class="calendar-events" data-class="bg-warning"><i class="fa fa-circle text-warning"></i> My Event Four</div>
-                                                    </div>
-                                                    <!-- checkbox -->
-                                                    <div class="checkbox m-t-20">
-                                                        <input id="drop-remove" type="checkbox">
-                                                        <label for="drop-remove">
-                                                            Remove after drop
-                                                        </label>
-                                                    </div>
-                                                    <a href="#" data-toggle="modal" data-target="#add-new-event" class="btn m-t-10 btn-info btn-block waves-effect waves-light">
-                                                            <i class="ti-plus"></i> Add New Event
-                                                        </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-9">
+								<div class="row">
+                                    <div class="col-lg-12">
                                         <div class="card-body b-l calender-sidebar">
                                             <div id="calendar"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
                 <!-- BEGIN MODAL -->
-                <div class="modal none-border" id="my-event">
+                <!-- <div class="modal none-border" id="my-event">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -85,7 +171,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Modal Add Category -->
                 <div class="modal fade none-border" id="add-new-event">
                     <div class="modal-dialog">
@@ -123,68 +209,35 @@
                     </div>
                 </div>
                 <!-- END MODAL -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
-                            </ul>
-                            <ul class="m-t-20 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             
         </div>
+
+
+		<div class="modal fade" id="aviso-modal">
+			<div class="modal-dialog modal-md">
+			<div class="modal-content">
+			
+				<!-- Modal Header -->
+				<div class="modal-header">
+				<h4 class="modal-title">¡Importante!</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p>Verifica que fecha y horario esten disponibles antes de realizar el apartado.<p>
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer">
+				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Aceptar</button>
+				</div>
+				
+			</div>
+			</div>
+		</div>
+
+

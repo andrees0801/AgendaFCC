@@ -121,6 +121,7 @@
     }
     /* Initializing */
     CalendarApp.prototype.init = function() {
+
         this.enableDrag();
         /*  Initialize the calendar  */
         var date = new Date();
@@ -131,6 +132,14 @@
         var today = new Date($.now());
 
         var defaultEvents =  [{
+                title: 'Released Ample Admin!',
+                start: new Date($.now() + 506800000),
+                className: 'bg-info'
+            },{
+                title: 'Released Ample Admin!',
+                start: new Date($.now() + 506800000),
+                className: 'bg-info'
+            },{
                 title: 'Released Ample Admin!',
                 start: new Date($.now() + 506800000),
                 className: 'bg-info'

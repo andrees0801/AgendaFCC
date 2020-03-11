@@ -25,6 +25,43 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="<?php echo base_url(); ?>libs/styleswitcher/jQuery.style.switcher.js"></script>
+
+	<script>
+	
+		var mostrar_aviso_ = true;
+		var horario = 1;
+		
+		function mostrar_aviso()
+		{
+			if(mostrar_aviso_)
+			{
+				mostrar_aviso_ = !mostrar_aviso_;
+				$('#aviso-modal').modal();
+			}
+		}
+
+		function agregar_horario()
+		{
+			horario++;
+
+			var date = '<div class="row" id="h_'+horario+'"><div class="col-3"><div class="form-group"><label class="mr-sm-2">Dia</label><input type="date" class="form-control mb-2 mr-sm-2" name="dia_'+horario+'"></div></div>';
+			var hi = '<div class="col-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-'+horario+'"></div></div>';
+			var hf = '<div class="col-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-'+horario+'"></div></div></div>';
+
+			$('#horarios').append(date+hi+hf);
+		}
+
+		function eliminar_horario()
+		{
+			if(horario != 1)
+			{
+				$('#h_'+horario).remove();
+				horario--;
+			}
+		}
+
+
+	</script>
 </body>
 
 </html>

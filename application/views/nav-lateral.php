@@ -6,7 +6,7 @@
                     <ul id="sidebarnav">
                         
 					<li>
-                    	<a class="waves-effect waves-dark transparente titulo-dash" href="#" aria-expanded="false"><i class="mdi mdi-home-outline"></i><span class="hide-menu">Home</span></a>
+                    	<a class="waves-effect waves-dark transparente titulo-dash" href="#" aria-expanded="false"><i class="mdi mdi-calendar-check"></i><span class="hide-menu">Reservasión</span></a>
                     </li>
                         
                     </ul>
