@@ -16,4 +16,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('calendario');
 		$this->load->view('footer');
 	}
+
+	public function Fechas_Disponibles()
+	{
+		$this->load->view('header');
+		$this->load->view('nav-lateral');
+		$this->load->view('fechas_disponibles');
+		$this->load->view('footer');
+	}
 }
