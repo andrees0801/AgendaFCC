@@ -73,7 +73,10 @@ class Welcome extends CI_Controller {
 			$horario->fin = $_GET['hora-f-'.$i];
 			array_push($horarios, $horario);
 
-			$disponible = $this->bases->verificar_horario($horario->dia, $horario->inicio, $horario->fin, $espacio);
+			$inicio = date( 'H:i:s', strtotime('+1 minute', strtotime ($horario->inicio)));
+			$fin = date( 'H:i:s', strtotime('-1 minute', strtotime ($horario->fin)));
+
+			$disponible = $this->bases->verificar_horario($horario->dia, $inicio, $fin, $espacio);
 
 			if($disponible == TRUE)
 			{
@@ -118,6 +121,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function obtener_disponibilidad()
+	{
+		$espacio = $_GET['espacio'];
+		$dia = $_GET['dia'];
+		$inicio = $_GET['inicio'];
+		$fin = $_GET['fin'];
+
+		$inicio = date( 'H:i:s', strtotime('+1 minute', strtotime ($inicio)));
+		$fin = date( 'H:i:s', strtotime('-1 minute', strtotime ($fin)));
+
+		$disponible = $this->bases->obtener_horarios_no_disponibles($dia, $inicio, $fin, $espacio);
+
+
+		echo json_encode($disponible);
+	}
+
 	/* Obtencion de horarios ocupados */
 	public function obtener_fechas_solicitadas()
 	{
@@ -126,21 +145,27 @@ class Welcome extends CI_Controller {
 		$defaultEvents =  array();
 		$defaultEvent = new stdClass();
 
-		switch ($inmueble) {
+		$horarios_query = $this->bases->obtener_horarios_espacio($inmueble);
 
-			case "Auditorio Albert Einstein":
-				
+		if($horarios_query != FALSE)
+		{
+			for($i=0; $i<count($horarios_query); $i++)
+			{
 				/*Aqui inicia el for de todos los valores obtenidos de la bd*/
-
+    
 					/* Obtenemos los valores de la bd y se crea el elemento */
-					$fecha_inicio = date_create('2020-03-31 09:00');
-					$fecha_fin = date_create('2020-03-31 12:00');
+					$hora_inicial = $horarios_query[$i]->hora_inicial;
+					$hora_fin = $horarios_query[$i]->hora_fin;
+					$fecha = $horarios_query[$i]->fecha;
+
+					$fecha_inicio = date_create($fecha.' '.$hora_inicial);
+					$fecha_fin = date_create($fecha.' '.$hora_fin);
 					
 					/* Le damos el formato aceptado por el plugin */
 					$inicio = date_format($fecha_inicio, 'D M d o G:i:00');
 					$fin = date_format($fecha_fin, 'D M d o G:i:00');
 
-					$defaultEvent->title = 'Auditorio 09:00-12:00';
+					$defaultEvent->title = $hora_inicial."-".$hora_fin;
 					$defaultEvent->start = $inicio;
 					$defaultEvent->end = $fin;
 					$defaultEvent->className = 'bg-info';
@@ -148,28 +173,9 @@ class Welcome extends CI_Controller {
 					array_push($defaultEvents, $defaultEvent);
 
 				/*Aqui finaliza el for */
-
-				break;
-
-			case "Mural":
-
-				/* Obtenemos los valores de la bd y se crea el elemento */
-				$fecha_inicio = date_create('2020-03-31 09:00');
-				$fecha_fin = date_create('2020-03-31 12:00');
-				
-				/* Le damos el formato aceptado por el plugin */
-				$inicio = date_format($fecha_inicio, 'D M d o G:i:00');
-				$fin = date_format($fecha_fin, 'D M d o G:i:00');
-
-				$defaultEvent->title = 'Mural 09:00-12:00';
-				$defaultEvent->start = $inicio;
-				$defaultEvent->end = $fin;
-				$defaultEvent->className = 'bg-info';
-
-				array_push($defaultEvents, $defaultEvent);
-
-				break;
+			}
 		}
+		
 		echo json_encode($defaultEvents);
 
 	}

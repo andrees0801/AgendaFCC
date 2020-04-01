@@ -38,7 +38,7 @@
 								<div class="form-group">
 									<label for="sel1">Seleccione el espacio:</label>
 									<select class="form-control" name="espacio" required>
-										<option selected disabled></option>
+										<option selected disabled>---</option>
 										<option value="Auditorio Albert Einstein">Auditorio Albert Einstein</option>
 										<option value="Mural">Mural</option>
 									</select>

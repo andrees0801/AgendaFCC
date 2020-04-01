@@ -6,8 +6,8 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid mt-5" align="center">
-				<div class="row">
-					<div class="col-12 mb-3">
+				<div class="row m-5 color-blanco">
+					<div class="col-12 mb-3 p-3">
 						<img src="<?php echo base_url(); ?>images/success.png" class="img-thumbnail img-success" alt="success">
 					</div>
 					<div class="col-12">

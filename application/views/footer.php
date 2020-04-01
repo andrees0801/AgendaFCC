@@ -61,6 +61,56 @@
 			}
 		}
 
+		$('#no-disponible-txt').hide();
+		$('#disponible-text').hide();
+		$('#tabla-horarios').hide();
+
+		function obtener_disponibilidad()
+		{
+			var espacio = $('#espacio').val()
+			var dia = $('#dia').val();
+			var inicio = $('#hi').val();
+			var fin = $('#hf').val();
+
+			if(espacio == null || dia == "" || inicio == "" || fin == "" )
+			{
+				alert('Llena todos los campos');
+			}else{
+				$.ajax({
+					method: 'GET',
+					url: "obtener_disponibilidad",
+					data: { espacio: espacio, dia: dia, inicio : inicio, fin: fin }
+
+				}).done(function(disponible) {
+					if(disponible != "false")
+					{
+						$('#no-disponible-txt').show();
+						$('#tabla-horarios').show();
+						$('#disponible-text').hide();
+
+						$('#tbody-table').empty();
+						var elementos_table = JSON.parse(disponible);
+
+						for(i=0; i < elementos_table.length; i++){
+							var tr = '<tr class="table-danger">'
+							
+							tr += '<td>'+elementos_table[i].fecha+'</td>'
+							tr += '<td>'+elementos_table[i].hora_inicial+'</td>'
+							tr += '<td>'+elementos_table[i].hora_fin+'</td>'
+							tr += '<td>'+elementos_table[i].espacio+'</td>'
+							tr += '</tr>';
+
+							$('#tbody-table').append(tr);	
+						}
+
+					}else{
+						$('#no-disponible-txt').hide();
+						$('#tabla-horarios').hide();
+						$('#disponible-text').show();
+					}
+				});
+			}
+		}
 
 	</script>
 </body>
