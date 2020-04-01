@@ -19,23 +19,24 @@
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="nombre" class="mr-sm-2">Nombre(s):</label>
-									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nombre(s)" name="nombre">
+									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nombre(s)" name="nombre" required>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="apellido" class="mr-sm-2">Apellidos:</label>
-									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Apellidos" name="apellido">
+									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Apellidos" name="apellido" required>
 								</div>
 							</div>
 							<div class="col-6">
 								<label for="email">Correo:</label>
-    							<input type="email" class="form-control" placeholder="Correo" id="correo">
+    							<input type="email" class="form-control" placeholder="Correo" id="correo" required>
 							</div>
 							<div class="col-6">
 								<div class="form-group">
 									<label for="sel1">Seleccione el espacio:</label>
-									<select class="form-control" id="sel1">
+									<select class="form-control" name="espacio" required>
+										<option selected disabled>Espacio</option>
 										<option value="Auditorio Albert Einstein">Auditorio Albert Einstein</option>
 										<option value="Mural">Mural</option>
 									</select>
@@ -54,19 +55,19 @@
 								<div class="col-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Dia</label>
-										<input type="date" class="form-control mb-2 mr-sm-2" id="dia_1" name="dia_1">
+										<input type="date" class="form-control mb-2 mr-sm-2" id="dia_1" name="dia_1" required>
 									</div>
 								</div>
 								<div class="col-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Hora de inicio</label>
-										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-1">
+										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-1" required>
 									</div>
 								</div>
 								<div class="col-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Hora de finalización</label>
-										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-1">
+										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-1" required>
 									</div>
 								</div>
 							</div>
