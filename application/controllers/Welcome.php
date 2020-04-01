@@ -27,6 +27,27 @@ class Welcome extends CI_Controller {
 
 	public function realizar_apartado()
 	{
+		$nombre = $_GET['nombre'];
+		$apellido = $_GET['apellido'];
+		$espacio = $_GET['espacio'];
+
+		$horarios =  array();
+		$horario = new stdClass();
+
+		$i = 1;
+
+		while(!empty($_GET['dia_'.$i]))
+		{
+			$horario->dia = $_GET['dia_'.$i];
+			$horario->inicio = $_GET['hora-i-'.$i];
+			$horario->fin = $_GET['hora-f-'.$i];
+
+			array_push($horarios, $horario);
+			$i++;
+		}
+
+		print_r($horarios);
+		
 	}
 
 	/* Obtencion de horarios ocupados */
