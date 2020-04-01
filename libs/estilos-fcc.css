@@ -2,3 +2,15 @@
 .transparente{
 	background-color: transparent !important;
 }
+
+.img-success{
+	background-color: transparent !important;
+	border: none !important;
+	width: 40%;
+}
+
+.img-denied{
+	background-color: transparent !important;
+	border: none !important;
+	width: 22%;
+}

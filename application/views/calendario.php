@@ -13,9 +13,9 @@
 							<button  onclick="mostrar_aviso()" class="btn btn-info btn-block" data-toggle="collapse" href="#reservasion-div">Reservar espacio</button>
 						</div>
 					</div>
-					<form id="reservasion-div" action="<?php echo base_url(); ?>/Welcome/realizar_apartado" method="GET" class="collapse">
+					<form id="reservasion-div" action="<?php echo base_url(); ?>Welcome/realizar_apartado" method="GET" class="collapse">
 						
-						<div class="row mb-2">
+						<div class="row mb-2 pt-4">
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="nombre" class="mr-sm-2">Nombre(s):</label>
@@ -28,19 +28,27 @@
 									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Apellidos" name="apellido" required>
 								</div>
 							</div>
-							<div class="col-6">
-								<label for="email">Correo:</label>
-    							<input type="email" class="form-control" placeholder="Correo" id="correo" required>
+							<div class="col-12 col-lg-6">
+								<div class="form-group">
+									<label for="email">Correo:</label>
+									<input type="email" class="form-control" placeholder="Correo" name="correo" required>
+								</div>
 							</div>
-							<div class="col-6">
+							<div class="col-12 col-lg-6">
 								<div class="form-group">
 									<label for="sel1">Seleccione el espacio:</label>
 									<select class="form-control" name="espacio" required>
-										<option selected disabled>Espacio</option>
+										<option selected disabled></option>
 										<option value="Auditorio Albert Einstein">Auditorio Albert Einstein</option>
 										<option value="Mural">Mural</option>
 									</select>
 								</div> 
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="evento" class="mr-sm-2">Nombre del evento:</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nombre del evento" name="evento" required>
+								</div>
 							</div>
 						</div>
 
@@ -52,19 +60,19 @@
 						
 						<div class="container-fluid p-0" id="horarios">
 							<div class="row">
-								<div class="col-3">
+								<div class="col-6 col-lg-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Dia</label>
 										<input type="date" class="form-control mb-2 mr-sm-2" id="dia_1" name="dia_1" required>
 									</div>
 								</div>
-								<div class="col-3">
+								<div class="col-6 col-lg-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Hora de inicio</label>
 										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-1" required>
 									</div>
 								</div>
-								<div class="col-3">
+								<div class="col-6 col-lg-3">
 									<div class="form-group">
 										<label for="dia_1" class="mr-sm-2">Hora de finalización</label>
 										<input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-1" required>
@@ -91,7 +99,7 @@
 
 
 						<div class="row">
-							<div class="col-5 ml-auto">
+							<div class="col-12 col-lg-5 ml-auto">
 								<button type="submit" class="btn btn-success btn-block">
 									<i class="mdi mdi-calendar-check"></i>
 									<span>Reservar</span>

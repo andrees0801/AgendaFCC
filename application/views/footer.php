@@ -45,9 +45,9 @@
 		{
 			horario++;
 
-			var date = '<div class="row" id="h_'+horario+'"><div class="col-3"><div class="form-group"><label class="mr-sm-2">Dia</label><input type="date" class="form-control mb-2 mr-sm-2" name="dia_'+horario+'" required></div></div>';
-			var hi = '<div class="col-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-'+horario+'" required></div></div>';
-			var hf = '<div class="col-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-'+horario+'" required></div></div></div>';
+			var date = '<div class="row" id="h_'+horario+'"><div class="col-6 col-lg-3"><div class="form-group"><label class="mr-sm-2">Dia</label><input type="date" class="form-control mb-2 mr-sm-2" name="dia_'+horario+'" required></div></div>';
+			var hi = '<div class="col-6 col-lg-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-i-'+horario+'" required></div></div>';
+			var hf = '<div class="col-6 col-lg-3"><div class="form-group"><label class="mr-sm-2">Hora de inicio</label><input type="time" class="form-control mb-2 mr-sm-2" name="hora-f-'+horario+'" required></div></div></div>';
 
 			$('#horarios').append(date+hi+hf);
 		}
