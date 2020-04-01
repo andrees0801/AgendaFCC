@@ -20,7 +20,8 @@
     <script src="<?php echo base_url(); ?>libs/calendar/jquery-ui.min.js"></script>
     <script src="<?php echo base_url(); ?>libs/moment/moment.js"></script>
     <script src='<?php echo base_url(); ?>libs/calendar/dist/fullcalendar.min.js'></script>
-    <script src="<?php echo base_url(); ?>libs/calendar/dist/cal-init.js"></script>
+    <script src="<?php echo base_url(); ?>libs/calendarios-inmuebles/mural.js"></script>
+	<script src="<?php echo base_url(); ?>libs/calendarios-inmuebles/auditorio-albert.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
