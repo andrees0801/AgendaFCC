@@ -143,7 +143,6 @@ class Welcome extends CI_Controller {
 		$inmueble = $_GET['inmueble'];
 
 		$defaultEvents =  array();
-		$defaultEvent = new stdClass();
 
 		$horarios_query = $this->bases->obtener_horarios_espacio($inmueble);
 
@@ -152,7 +151,7 @@ class Welcome extends CI_Controller {
 			for($i=0; $i<count($horarios_query); $i++)
 			{
 				/*Aqui inicia el for de todos los valores obtenidos de la bd*/
-    
+					$defaultEvent = new stdClass();
 					/* Obtenemos los valores de la bd y se crea el elemento */
 					$hora_inicial = $horarios_query[$i]->hora_inicial;
 					$hora_fin = $horarios_query[$i]->hora_fin;
