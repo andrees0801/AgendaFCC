@@ -40,7 +40,7 @@
 	<div class="cargando-validacion" id="cargando-validacion">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Cargando...</p>
+            <p class="loader__label">Verificando...</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -53,7 +53,7 @@
                     <a class="text-center db"><img src="<?php echo base_url();?>images/logo_FCC.png" style="width: 250px;" /></a>
                     <div class="form-group m-t-40">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" id="user" name="user" required="" placeholder="Usuario">
+                            <input class="form-control" type="email" id="user" name="user" required="" placeholder="Usuario">
                         </div>
                     </div>
                     <div class="form-group">
