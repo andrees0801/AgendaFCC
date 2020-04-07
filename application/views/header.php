@@ -12,12 +12,18 @@
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Calendar CSS -->
-    <link href="<?php echo base_url(); ?>libs/calendar/dist/fullcalendar.css" rel="stylesheet" />
+    
+	<link href='<?php echo base_url();?>libs/calendar/core/main.css' rel='stylesheet' />
+	<link href='<?php echo base_url();?>libs/calendar/daygrid/main.css' rel='stylesheet' />
+	<link href='<?php echo base_url();?>libs/calendar/timegrid/main.css' rel='stylesheet' />
+	<link href='<?php echo base_url();?>libs/calendar/list/main.css' rel='stylesheet' /> 
+
     <!-- Custom CSS -->
     <link href="<?php echo base_url(); ?>libs/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="<?php echo base_url(); ?>libs/colors/default-dark.css" id="theme" rel="stylesheet">
 	<!-- Nuestros estilos -->
+
 	<link href="<?php echo base_url(); ?>libs/estilos-fcc.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,8 +89,10 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
                         
-                        <li class="nav-item dropdown">
-                            
+                        <li class="nav-item dropdown mega-dropdown">
+							<a href="<?php echo base_url(); ?>Welcome/login" class="nav-link dropdown-toggle waves-effect waves-dark">
+								<i class="fa fa-user-circle"></i>
+							</a>
                         </li>
                         
                     </ul>

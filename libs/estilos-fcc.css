@@ -22,3 +22,58 @@
 .scroll-add{
 	overflow: auto;
 }
+
+.cargando-validacion{
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	position: fixed;
+	z-index: 99999;
+	background: #fff;
+	position: absolute;
+}
+
+#informacion-login{
+	display: none;
+}
+
+/* Buttons calendar */
+
+.fc-dayGridMonth-button{
+	display: none !important;	
+}
+
+.fc-timeGridWeek-button{
+	display: none !important;
+}
+
+.fc-timeGridDay-button{
+	display: none !important;	
+}
+
+.fc-listWeek-button{
+	display: none !important;	
+}
+
+/* .fc-today-button{
+	display: none !important;
+} */
+
+@media (max-width: 767px) {
+
+	.fc-today-button{
+		margin-top: 10px;
+		margin-left: auto !important;
+	} 
+
+	.login-sidebar .login-box {
+		position: relative !important;
+		height: 50% !important;
+		margin: 60px 20px;
+	}
+
+	.login-box {
+		width: 90% !important; 
+	}
+}

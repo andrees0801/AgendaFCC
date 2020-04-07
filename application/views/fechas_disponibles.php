@@ -16,7 +16,7 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="form-group">
-					<label for="dia" class="mr-sm-2">Ingrese el dia:</label>
+					<label for="dia" class="mr-sm-2">Ingrese el día:</label>
 					<input type="date" class="form-control mb-2 mr-sm-2" name="dia" id="dia">
 				</div>
 			</div>

@@ -157,18 +157,11 @@ class Welcome extends CI_Controller {
 					$hora_fin = $horarios_query[$i]->hora_fin;
 					$fecha = $horarios_query[$i]->fecha;
 
-					$fecha_inicio = date_create($fecha.' '.$hora_inicial);
-					$fecha_fin = date_create($fecha.' '.$hora_fin);
-					
 					/* Le damos el formato aceptado por el plugin */
-					$inicio = date_format($fecha_inicio, 'D M d o G:i:00');
-					$fin = date_format($fecha_fin, 'D M d o G:i:00');
+					$inicio = $fecha."T".$hora_inicial;
 
 					$defaultEvent->title = $hora_inicial."-".$hora_fin;
 					$defaultEvent->start = $inicio;
-					$defaultEvent->end = $fin;
-					$defaultEvent->className = 'bg-info';
-
 					array_push($defaultEvents, $defaultEvent);
 
 				/*Aqui finaliza el for */
@@ -177,5 +170,16 @@ class Welcome extends CI_Controller {
 		
 		echo json_encode($defaultEvents);
 
+	}
+
+	public function login()
+	{
+		$this->load->view('login');
+	}
+
+	public function verificar()
+	{
+		echo TRUE;
+		//echo FALSE;
 	}
 }

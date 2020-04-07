@@ -132,7 +132,7 @@
 										<div class="row">
 											<div class="col-lg-12">
 												<div class="card-body b-l calender-sidebar">
-													<div id="calendar-mural"></div>
+													<div id="calendario-mural"></div>
 												</div>
 											</div>
 										</div>

@@ -17,9 +17,13 @@
     <!--Custom JavaScript -->
     <script src="<?php echo base_url(); ?>libs/custom.min.js"></script>
     <!-- Calendar JavaScript -->
-    <script src="<?php echo base_url(); ?>libs/calendar/jquery-ui.min.js"></script>
-    <script src="<?php echo base_url(); ?>libs/moment/moment.js"></script>
-    <script src='<?php echo base_url(); ?>libs/calendar/dist/fullcalendar.min.js'></script>
+	<script src="<?php echo base_url();?>libs/calendar/core/main.js"></script>
+	<script src="<?php echo base_url();?>libs/calendar/interaction/main.js"></script>
+	<script src="<?php echo base_url();?>libs/calendar/daygrid/main.js"></script>
+	<script src="<?php echo base_url();?>libs/calendar/timegrid/main.js"></script>
+	<script src="<?php echo base_url();?>libs/calendar/list/main.js"></script>
+	<script src="<?php echo base_url();?>libs/calendar/es.js"></script>
+
     <script src="<?php echo base_url(); ?>libs/calendarios-inmuebles/mural.js"></script>
 	<script src="<?php echo base_url(); ?>libs/calendarios-inmuebles/auditorio-albert.js"></script>
     <!-- ============================================================== -->
