@@ -54,5 +54,50 @@
 			}
 		}
 
+		public function obtener_solicitudes()
+		{
+			$sql = "SELECT `id_solicitud`, `nombre`, `apellidos`, `correo`, `nombre_evento`, `verificado`, `aprobado` FROM `solicitudes` WHERE 1";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		public function verificar_solicitud($id)
+		{
+			$sql = "UPDATE solicitudes SET verificado = 'TRUE' WHERE id_solicitud LIKE '$id'";
+			$query = $this->db->query($sql);
+		}
+
+		public function aprobar_solicitud($id)
+		{
+			$sql = "UPDATE solicitudes SET aprobado = 'TRUE' WHERE id_solicitud LIKE '$id'";
+			$query = $this->db->query($sql);
+		}
+
+		public function obtener_solicitud_id($id)
+		{
+			$sql = "SELECT solicitud_id FROM solicitudes WHERE id_solicitud LIKE '$id'";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		public function eliminar_solicitud($solicitud_id)
+		{
+			$sql = "DELETE FROM solicitudes WHERE solicitud_id LIKE '$solicitud_id'";
+			$query = $this->db->query($sql);
+		}
+
+		public function eliminar_horarios($solicitud_id)
+		{
+			$sql = "DELETE FROM horarios WHERE solicitud_id LIKE '$solicitud_id'";
+			$query = $this->db->query($sql);
+		}
+
+		public function obtener_horarios_solicitud($id)
+		{
+			$sql = "SELECT h.fecha, h.hora_inicial, h.hora_fin, h.espacio FROM horarios as h inner join solicitudes as s on s.solicitud_id = h.solicitud_id WHERE s.id_solicitud LIKE '$id'";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
 	}
 ?>

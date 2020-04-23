@@ -177,9 +177,24 @@ class Welcome extends CI_Controller {
 		$this->load->view('login');
 	}
 
+	public function logout()
+	{
+		redirect('Welcome/', 'location');
+	}
+
 	public function verificar()
 	{
-		echo TRUE;
+		$user = $_POST['user'];
+		$password = $_POST['password'];
+
+		echo 'director';
 		//echo FALSE;
 	}
+
+	public function iniciar_sesion()
+	{
+		//echo $_GET['status'];
+		redirect('Administrador/Inicio', 'location');
+	}
+
 }

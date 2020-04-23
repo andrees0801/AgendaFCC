@@ -1,4 +1,3 @@
-
 const loginForm = document.querySelector('#loginform');
 
 loginForm.addEventListener('submit', (e)=>{
@@ -18,9 +17,9 @@ loginForm.addEventListener('submit', (e)=>{
 			data: { user: user_val, password: password_val }
 
 		}).done(function(status) {
-			if(status == 1){
+			if(status != 0){
 				//redireccionamos
-				$('#informacion-login').css("display", "none");
+				location.href = "iniciar_sesion?status="+status;
 			}else{
 				$('#informacion-login').css("display", "block");
 			}

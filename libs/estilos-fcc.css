@@ -23,6 +23,9 @@
 	overflow: auto;
 }
 
+.hand{
+	cursor:pointer;
+}
 .cargando-validacion{
 	display: none;
 	width: 100%;
