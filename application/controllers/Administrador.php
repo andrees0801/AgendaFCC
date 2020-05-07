@@ -72,8 +72,8 @@ class Administrador extends CI_Controller {
 				$CI->email->initialize($config);
 			
 				$subject = 'Facultad de Ciencias de la Computación: Solicitud para el apartado de '.$espacio.'.';
-				$msg = 'Su solicitud ha sido aceptada.';
-			
+				$msg = 'Su solicitud ha sido aceptada. Recuerda estar 30 minutos antes de la hora solicitada en dirección.';
+				
 				/* Envia el código al correo electronico */
 				$CI->email->from($this->config->item('smtp_user'));
 				$CI->email->to($datos->correo);
@@ -82,6 +82,7 @@ class Administrador extends CI_Controller {
 				if($espacio == 'Auditorio Albert Einstein')
 				{
 					$msg = 'Su solicitud ha sido aceptada, a continuación se adjunta un archivo pdf para el uso del sistema de audio.';
+					$msg .= '\r\nRecuerda estar 30 minutos antes de la hora solicitada en dirección.';
 					$CI->email->attach( base_url().'pdfs'.'/'.$this->config->item('manual_pdf'));
 				}
 

@@ -12,7 +12,8 @@
 					</div>
 					<div class="col-12">
 						<p>El registro se ha realizado exitosamente.</p>
-						<p>Espera tu aprobación.</p>
+						<p>Una vez aprobada tu solicitud, te llegará un correo.</p>
+						<p>Si no esta en la bandeja principal, verifica en la bandeja de spam.</p>
 					</div>
 				</div>
 			</div>
