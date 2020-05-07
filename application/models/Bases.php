@@ -73,9 +73,9 @@
 			$query = $this->db->query($sql);
 		}
 
-		public function obtener_solicitud_id($id)
+		public function obtener_solicitud_id_correo($id)
 		{
-			$sql = "SELECT solicitud_id FROM solicitudes WHERE id_solicitud LIKE '$id'";
+			$sql = "SELECT solicitud_id, correo FROM solicitudes WHERE id_solicitud LIKE '$id'";
 			$query = $this->db->query($sql);
 			return $query->result();
 		}
@@ -95,6 +95,21 @@
 		public function obtener_horarios_solicitud($id)
 		{
 			$sql = "SELECT h.fecha, h.hora_inicial, h.hora_fin, h.espacio FROM horarios as h inner join solicitudes as s on s.solicitud_id = h.solicitud_id WHERE s.id_solicitud LIKE '$id'";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		public function validar_usuario($usuario, $password)
+		{
+			$sql = "SELECT `status` FROM `admins` WHERE `usuario` LIKE '$usuario' AND `password` LIKE '$password'";
+			$query = $this->db->query($sql);
+			
+			return $query->result();
+		}
+
+		public function obtener_espacio($solicitud_id)
+		{
+			$sql = "SELECT `espacio` FROM `horarios` WHERE `solicitud_id` LIKE '$solicitud_id' LIMIT 1";
 			$query = $this->db->query($sql);
 			return $query->result();
 		}

@@ -25,6 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/AgendaFCC/';
 
+/* Requisitos para el envio del correo */
+	$config['smtp_host'] = 'ssl://smtp.gmail.com';
+	$config['smtp_port'] = 465;
+	$config['smtp_user'] = 'pruebas.correo.test24@gmail.com';
+	$config['smtp_pass'] = 'pruebas.correo.test2020';
+
+	$config['manual_pdf'] = 'manual_usuario.pdf'; // Nombre del archivo
+
 /*
 |--------------------------------------------------------------------------
 | Index File

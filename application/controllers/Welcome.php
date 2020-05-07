@@ -30,23 +30,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function ej()
-	{
-		// $hoy = getdate();
-		// echo $hoy[0];
-		// $escapado = addslashes("Is your name O'Reilly?");
-		// $descapado = stripslashes($escapado);
-
-		// echo $escapado."<br>";
-		// echo $descapado;
-
-		// $horarios =  array();
-		// $horario = new stdClass();
-
-		//array_push($horarios, $horario);
-
-	}
-
 	public function realizar_apartado()
 	{
 		$nombre = addslashes($_GET['nombre']);
@@ -177,24 +160,42 @@ class Welcome extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	public function logout()
-	{
-		redirect('Welcome/', 'location');
-	}
-
 	public function verificar()
 	{
-		$user = $_POST['user'];
-		$password = $_POST['password'];
+		$user = addslashes($_POST['user']);
+		$password = md5($_POST['password']);
 
-		echo 'director';
-		//echo FALSE;
+		$validacion = $this->bases->validar_usuario($user, $password);
+
+		if(count($validacion) == 0)
+		{
+			echo false;
+		}else{
+			echo $validacion[0]->status;
+		}
+
 	}
 
 	public function iniciar_sesion()
 	{
-		//echo $_GET['status'];
-		redirect('Administrador/Inicio', 'location');
+		if(isset($_GET['status']))
+		{
+			$newdata = array(
+				'status'  => $_GET['status'],
+				'logged_in' => TRUE
+			);
+			$this->session->set_userdata($newdata);
+			redirect('Administrador/Inicio', 'location');
+		}else{
+			redirect('Welcome/login');
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('status');
+		$this->session->sess_destroy();
+		redirect('Welcome/', 'location');
 	}
 
 }

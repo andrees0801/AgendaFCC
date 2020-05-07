@@ -71,7 +71,12 @@
 
 									<td>
 										<input type="checkbox" class="check" id="v-<?php echo $solicitudes[$i_solicitudes]->id_solicitud ?>" onclick="verificar(<?php echo $solicitudes[$i_solicitudes]->id_solicitud ?>)"
-											<?php if($solicitudes[$i_solicitudes]->verificado == "TRUE"){ echo "disabled checked"; } ?>
+											<?php
+												
+												if($solicitudes[$i_solicitudes]->verificado == "TRUE"){
+														echo "disabled checked"; 
+												}
+											?>
 										>
 										<label for="v-<?php echo $solicitudes[$i_solicitudes]->id_solicitud ?>">Verificar</label>
 									</td>

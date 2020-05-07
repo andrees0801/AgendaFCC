@@ -17,7 +17,9 @@ loginForm.addEventListener('submit', (e)=>{
 			data: { user: user_val, password: password_val }
 
 		}).done(function(status) {
+
 			if(status != 0){
+				console.log(status);
 				//redireccionamos
 				location.href = "iniciar_sesion?status="+status;
 			}else{
