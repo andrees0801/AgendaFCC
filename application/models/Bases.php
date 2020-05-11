@@ -80,6 +80,13 @@
 			return $query->result();
 		}
 
+		public function obtener_solicitud_id($id)
+		{
+			$sql = "SELECT solicitud_id FROM solicitudes WHERE id_solicitud LIKE $id";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
 		public function eliminar_solicitud($solicitud_id)
 		{
 			$sql = "DELETE FROM solicitudes WHERE solicitud_id LIKE '$solicitud_id'";
