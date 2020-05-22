@@ -1,0 +1,18 @@
+En el archivo config.php que se encuentra en la carpeta "appication/config/"
+Modificar las siguientes variables de configuracion:
+
+a) $config['base_url'] => ruta donde se almacenara el proyecto
+
+b) correo y contraseña, como tambien smtp y smtp_port
+    para enviar el manual
+
+	    $config['smtp_host'] = 'ssl://smtp.gmail.com';
+	    $config['smtp_port'] = 465;
+	    $config['smtp_user'] = 'pruebas.correo.test24@gmail.com';
+	    $config['smtp_pass'] = 'pruebas.correo.test2020';
+
+El archivo "manual_usuario.pdf" es un ejemplo que se descargo de internet, este debera ser remplazado, el cual
+se encuentra en la carpeta "pdfs".
+El nuevo manual debera tener el nombre "manual_usuario.pdf" para que no cause conflictos en la aplicación, si se desea cambiar
+el nombre del archivo, se debera modificar también el valor de la variable $config['manual_pdf']
+con el nuevo nombre del archivo y extensión, el cual se encuentra en "appication/config/".
